@@ -15,7 +15,7 @@ func main() {
 
 	r := mymux.NewRouter()
 	//r.Handle("/user/{uid:\\d+}", serverHandler)
-	r.Methods("Get").Path("/user/{uid:\\d+}").Handler(serverHandler)
+	r.Methods("Get", "DELETE").Path("/user/{uid:\\d+}").Handler(serverHandler)
 
 	http.ListenAndServe(":8000", r)
 }
